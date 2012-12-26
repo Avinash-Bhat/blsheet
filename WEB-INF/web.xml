@@ -1,0 +1,39 @@
+<web-app version="2.4"
+xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ 
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.olam.blsheet.servlets.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DetailServlet</servlet-name>
+		<servlet-class>com.olam.blsheet.servlets.DetailServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DataServlet</servlet-name>
+		<servlet-class>com.olam.blsheet.servlets.DataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SummaryServlet</servlet-name>
+		<servlet-class>com.olam.blsheet.servlets.SummaryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DetailServlet</servlet-name>
+		<url-pattern>/DetailServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DataServlet</servlet-name>
+		<url-pattern>/DataServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SummaryServlet</servlet-name>
+		<url-pattern>/SummaryServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -4,3 +4,13 @@
 *.jar
 *.war
 *.ear
+
+# Build Files #
+.settings
+work/
+WEB-INF/classes/
+
+# Temp Files #
+
+tmp/
+temp/

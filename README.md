@@ -12,4 +12,4 @@ Changing database
 -----------------
 
 If your commit has changes to the database, please put the updated files under 'db/tables' **without** any data or comments about the mysql version and platform.
-Please pscripts for tables in separate files.
+Please include changes of individual tables in separate files.

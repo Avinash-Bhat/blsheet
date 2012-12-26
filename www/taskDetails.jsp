@@ -2,22 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <jsp:useBean id="user" class="com.olam.blsheet.beans.User" scope="session" />
-<%
-	System.out.println(user);
-	try {
-		if (!user.isAuthenticated()) {
-			response.sendRedirect(request.getContextPath());
-		}
-	} catch (IllegalArgumentException e) {
-		response.sendRedirect(request.getContextPath());
-	}
-%>
 <html>
 <head>
 <title>Simple jQuery and JSP example</title>
-<link rel="stylesheet" href="resources/jQuery/theme/default/jquery-ui.css" />
-<script src="resources/jQuery/jquery.js" type="text/javascript"></script>
-<script src="resources/jQuery/jquery-ui.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/jQuery/theme/default/jquery-ui.css" />
+<script src="<%=request.getContextPath()%>/resources/jQuery/jquery.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/resources/jQuery/jquery-ui.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -28,7 +18,7 @@
 			//alert(userId);
 			$.ajax({
 				type: 		"post",
-				url: 		"DetailServlet",
+				url: 		"<%=request.getContextPath()%>/DetailServlet",
 				data: 		{userId: userId},
 				dataType: "json",
 				success:	function(data) {

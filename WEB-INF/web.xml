@@ -4,6 +4,16 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
  
+    <filter>
+        <filter-name>JSPFilter</filter-name>
+        <filter-class>com.olam.blsheet.filters.JSPAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>JSPFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>com.olam.blsheet.servlets.LoginServlet</servlet-class>

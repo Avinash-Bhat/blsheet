@@ -9,11 +9,8 @@ import org.json.JSONObject;
 import com.olam.blsheet.beans.User;
 
 public class LoginServlet extends HttpServlet {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4772850349731464722L;
-
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) {
 		boolean json = request.getContentType().contains("json");
 		if (json) {
@@ -28,24 +25,20 @@ public class LoginServlet extends HttpServlet {
 					request.getSession().setAttribute("user", userDetails);
 					if (json) {
 						response.getWriter().println(
-								new JSONObject().put("success", true)
-										.toString());
+								new JSONObject().put("success", true).toString());
 					} else {
-						response.sendRedirect(request.getContextPath()
-								+ "/taskDetails.jsp");
+						response.sendRedirect(request.getContextPath() + "/www/taskDetails.jsp");
 						return;
 					}
 				} else {
-					response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-							"you shall not pass!!!");
+					response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "you shall not pass!!!");
 				}
 			} catch (IllegalArgumentException e) {
 				if (json) {
 					response.sendRedirect(request.getContextPath());
 					response.getWriter().println(
 							new JSONObject().put("success", false)
-									.put("fault", e.getLocalizedMessage())
-									.toString());
+									.put("fault", e.getLocalizedMessage()).toString());
 				} else {
 					response.sendRedirect(request.getContextPath()
 							+ "/?message=" + e.getLocalizedMessage());
@@ -54,6 +47,6 @@ public class LoginServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 }

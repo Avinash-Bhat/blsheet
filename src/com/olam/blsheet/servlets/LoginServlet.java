@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 										.toString());
 					} else {
 						response.sendRedirect(request.getContextPath()
-								+ "/TaskDetails.jsp");
+								+ "/taskDetails.jsp");
 						return;
 					}
 				} else {

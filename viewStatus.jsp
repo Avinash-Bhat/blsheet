@@ -56,7 +56,7 @@
 			});
 		});
 		$('#link').click(function(){
-			window.location.replace("<%=request.getContextPath()%>/TaskDetails.jsp");
+			window.location.replace("<%=request.getContextPath()%>/taskDetails.jsp");
 		});
 		$('#signOut').click(function(){
 			window.location.replace("<%=request.getContextPath()%>");

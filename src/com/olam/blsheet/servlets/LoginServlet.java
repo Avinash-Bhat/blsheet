@@ -40,8 +40,8 @@ public class LoginServlet extends HttpServlet {
 							new JSONObject().put("success", false)
 									.put("fault", e.getLocalizedMessage()).toString());
 				} else {
-					response.sendRedirect(request.getContextPath()
-							+ "/?message=" + e.getLocalizedMessage());
+					request.getSession().setAttribute("message", e.getLocalizedMessage());
+					response.sendRedirect(request.getContextPath());
 				}
 			}
 		} catch (Exception e) {
